@@ -783,9 +783,11 @@ class eZPageType extends eZDataType
                                            'cancel_page' => $redirectionURI,
                                            'persistent_data' => array( 'HasObjectInput' => 0 ) );
 
-                if( $blockINI->hasVariable( $block->attribute( 'type' ), 'ManualBlockStartBrowseNode' ) )
+                if( $http->hasVariable( 'start-browse-node-id' ) )
                 {
-                    $browseParameters['start_node'] = $blockINI->variable( $block->attribute( 'type' ), 'ManualBlockStartBrowseNode' );
+                    $startBrowseNodeIds = $http->variable( 'start-browse-node-id' );
+                    $startBrowseNodeId = $startBrowseNodeIds[ $contentObjectAttribute->attribute( 'id' ) ][ $params[1] ][ $params[2] ];
+                    $browseParameters['start_node'] = $startBrowseNodeId;
                 }
 
                 eZContentBrowse::browse( $browseParameters, $module );

@@ -156,7 +156,9 @@
         {undef $loop_count}
     {/if}
     {if and( not( $is_dynamic ), not( $is_custom ) )}
+        {def $start_browse_node_id = first_set( ezini( $block.type, 'ManualBlockStartBrowseNode', 'block.ini' ), 2 )}
         <div>
+            <input type="hidden" name="start-browse-node-id[{$attribute.id}][{$zone_id}][{$block_id}]" value="{$start_browse_node_id}" />
             <input id="block-add-item-{$block_id}" class="button block-control" name="CustomActionButton[{$attribute.id}_new_item_browse-{$zone_id}-{$block_id}]" type="submit" value="{'Add item'|i18n( 'design/standard/block/edit' )}" />
         </div>
     {/if}
