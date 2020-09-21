@@ -1,5 +1,5 @@
 {
-    "name": "mugo/ezflow",
+    "name": "mugoweb/ezflow",
     "description": "Mugo fork of the eZ Publish Legacy Flow extension",
     "type": "ezpublish-legacy-extension",
     "license": "GPL-2.0",
