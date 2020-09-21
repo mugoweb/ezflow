@@ -313,6 +313,15 @@ class eZPageType extends eZDataType
 
                     foreach ( $params as $param => $value )
                     {
+                        if( is_array( $value ) )
+                        {
+                            $customAttributes[ $param ] = implode( ',', $value );
+                        }
+                        else
+                        {
+                            $customAttributes[ $param ] = $value;
+                        }
+
                         $customAttributes[$param] = $value;
                     }
 
