@@ -321,8 +321,6 @@ class eZPageType extends eZDataType
                         {
                             $customAttributes[ $param ] = $value;
                         }
-
-                        $customAttributes[$param] = $value;
                     }
 
                     $block->setAttribute( 'custom_attributes', $customAttributes );
